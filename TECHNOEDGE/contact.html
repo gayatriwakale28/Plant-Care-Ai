@@ -1,0 +1,755 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Contact Us - TechnoEdge (GS)</title>
+    <meta name="description" content="Get in touch with TechnoEdge for industrial machine tool accessories">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        :root {
+            --primary-orange: #ff6b35;
+            --hover-orange: #ff8659;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f9fa;
+        }
+
+        /* Premium Contact Section Styles */
+        .contact-info-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.15);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--hover-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+
+        .contact-info-card:hover .contact-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-icon i {
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .contact-info-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-card p,
+        .contact-info-card a {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-info-card a:hover {
+            color: var(--primary-orange);
+            padding-left: 5px;
+        }
+
+        /* Premium Form Styles */
+        .premium-form {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control,
+        .form-select {
+            border: 2px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-size: 15px;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.15);
+            background: #fff;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-orange), var(--hover-orange));
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .submit-btn i {
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Map Container */
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            margin-bottom: 80px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--primary-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            color: var(--primary-orange);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(255, 107, 53, 0.8)), 
+                        url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600') center/cover;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .page-header h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Contact Info Grid */
+        .contact-info-grid {
+            margin-bottom: 80px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .premium-form {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .map-container iframe {
+                height: 350px;
+            }
+
+            .contact-info-card {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark d-none d-lg-block">
+    <div class="row align-items-center top-bar">
+        <div class="col-lg-3 col-md-12 text-center text-lg-start">
+            <a href="index.html" class="navbar-brand m-0 p-0 d-flex align-items-center">
+                <img src="assets/img/logo/logo.png" alt="TechnoEdge Logo" style="height:50px; margin-right:10px;">
+                <h1 class="text-white m-0" style="font-size: 24px;">TechnoEdge(GS)</h1>
+            </a>
+        </div>
+        <div class="col-lg-9 col-md-12 text-end">
+            <div class="h-100 d-inline-flex align-items-center me-4">
+                <i class="fa fa-map-marker-alt text-orange me-2"></i>
+                <p class="m-0 text-light">Pune, Maharashtra</p>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center me-4">
+                <i class="far fa-envelope-open text-orange me-2"></i>
+                <p class="m-0 text-light">sales@technoedgegs.in
+</p>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center">
+                <a class="btn btn-sm-square bg-white text-orange me-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-sm-square bg-white text-orange me-1" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-sm-square bg-white text-orange me-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-sm-square bg-white text-orange me-0" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid nav-bar bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
+        <a href="index.html" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
+            <img src="assets/img/logo/logo.png" alt="TechnoEdge Logo" style="height:40px; margin-right:10px;">
+            <h1 class="text-dark m-0" style="font-size: 20px;">TechnoEdge(GS)</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav me-auto">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                
+                <div class="nav-item dropdown">
+                    <a href="products.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="products.html" class="dropdown-item">All Products</a>
+                        <a href="CUTEDGE.html" class="dropdown-item">CutEdge</a>
+                        <a href="GTC.html" class="dropdown-item">GTC</a>
+                        <a href="NANO.html" class="dropdown-item">Nano</a>
+                        <a href="METAL.html" class="dropdown-item">Advance Machine Tools</a>
+                        <a href="FENVICKRAVI.html" class="dropdown-item">Fenwick & Ravi</a>
+                        <a href="TENADE.html" class="dropdown-item">Tenade</a>
+                    </div>
+                </div>
+                <a href="Gallery.html" class="nav-item nav-link">Gallery</a>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+            </div>
+            <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-orange d-flex align-items-center">
+                <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                    <i class="fa fa-phone-alt text-orange"></i>
+                </div>
+                <div class="ms-3">
+                    <p class="mb-1 text-white">Call Us 24/7</p>
+                    <h5 class="m-0 text-white">9359841972</h5>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5">
+    <div class="container py-5">
+        <h1 class="display-3 text-white mb-3 animate__animated animate__fadeInDown">
+            Contact Us
+        </h1>
+        <p class="text-white-50 mb-0">Get in touch with our team of experts</p>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Contact Info Cards Start -->
+<section class="contact-info-grid py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-info-card text-center">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Visit Our Office</h4>
+                    <p>Girijashankar Survey no 129/2 , Swapnanagari society Walhekarwadi Road chinchwad Pune 411033<br> India</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-info-card text-center">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Call Us Anytime</h4>
+                    <p><a href="tel:9359841972">9359841972</a></p>
+                    <p class="text-muted mt-2">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-info-card text-center">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email Us</h4>
+                    <p><a href="mailto:info@technoedge.com">sales@technoedgegs.in
+</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Info Cards End -->
+
+<!-- Map Section Start -->
+<div class="container mb-5">
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.70906949857!2d73.69814992436651!3d18.52461345383822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1735735629134!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<!-- Map Section End -->
+
+<!-- Contact Form Section Start -->
+<section class="py-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="section-header text-center">
+                    <p class="section-subtitle">GET IN TOUCH</p>
+                    <h2 class="section-title">
+                        Let's Discuss Your <span>Project Requirements</span>
+                    </h2>
+                    <p class="mt-3 text-muted">Have questions about our products or services? Fill out the form below and our team will get back to you within 24 hours.</p>
+                </div>
+
+                <div class="premium-form">
+                    <form id="contact-form" action="assets/mail.php" method="POST">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" name="phone" placeholder="+91 " required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Company Name</label>
+                                <input type="text" class="form-control" name="company" placeholder="Your company name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Product Interest</label>
+                                <select class="form-select" name="product">
+                                    <option value="">Select a product category</option>
+                                    <option value="Nano Cast">Nano Cast - Granite Bases</option>
+                                    <option value="">Advance Machine Tools</option>
+                                    <option value="GTC">GTC - Precision Reducers</option>
+                                    <option value="Tenade">Tenade - Angle Heads</option>
+                                    <option value="CutEdge">CutEdge - Filtration Systems</option>
+                                    <option value="Fenwick & Ravi">Fenwick & Ravi - Storage Solutions</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">How did you hear about us?</label>
+                                <select class="form-select" name="source">
+                                    <option value="">Please select</option>
+                                    <option value="Search Engine">Search Engine</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="Referral">Referral</option>
+                                    <option value="Trade Show">Trade Show</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Your Message *</label>
+                                <textarea class="form-control" name="message" placeholder="Tell us about your project requirements, timeline, and any specific questions you have..." required></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="submit-btn">
+                                    Send Message
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Form Section End -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+            <!-- Get In Touch -->
+            <div class="col-md-6 col-lg-4">
+                <h5 class="text-white mb-4">Get In Touch</h5>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Girijashankar Survey no 129/2 , Swapnanagari society Walhekarwadi Road chinchwad Pune 411033</p>
+                <p><i class="fa fa-phone-alt me-3"></i>9359841972</p>
+                <p><i class="fa fa-envelope me-3"></i>sales@technoedgegs.in
+</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-6 col-lg-4">
+                <h5 class="text-white mb-4">Quick Links</h5>
+                <a class="btn btn-link" href="index.html">Home</a>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="products.html">Products</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="Gallery.html">Gallery</a>
+            </div>
+
+            <!-- Our Products -->
+            <div class="col-md-6 col-lg-4">
+                <h5 class="text-white mb-4">Our Products</h5>
+               <a class="btn btn-link" href="CUTEDGE.html">CutEdge - Filtration Systems</a>
+                <a class="btn btn-link" href="GTC.html">GTC - Precision Reducers</a>
+                <a class="btn btn-link" href="NANO.html">Nano Cast - Granite Bases</a>
+                <a class="btn btn-link" href="METAL.html">Advance Machine Tools</a>
+                <a class="btn btn-link" href="FENVICKRAVI.html">Fenwick & Ravi - Storage</a>
+                <a class="btn btn-link" href="TENADE.html">Tenade - Angle Heads</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="container px-lg-5">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="index.html">TechnoEdge (GS)</a>, All Rights Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Designed by 
+                    <a href="https://www.crystalweb.in/" target="_blank" class="footer-designer">
+                        Crystal Web
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-orange btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+
+<script>
+// Sticky Navbar
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 45) {
+        $('.nav-bar').addClass('sticky-top shadow-sm');
+    } else {
+        $('.nav-bar').removeClass('sticky-top shadow-sm');
+    }
+});
+
+// Back to top button
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+        $('.back-to-top').fadeIn('slow');
+    } else {
+        $('.back-to-top').fadeOut('slow');
+    }
+});
+
+$('.back-to-top').click(function () {
+    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+    return false;
+});
+
+// Form submission
+$('#contact-form').on('submit', function(e) {
+    e.preventDefault();
+    
+    // Add your form submission logic here
+    alert('Thank you for contacting us! We will get back to you within 24 hours.');
+    this.reset();
+});
+</script>
+
+<style>
+/* TechnoEdge Original Colors */
+.text-orange {
+    color: #ff6b35 !important;
+}
+
+.bg-orange {
+    background-color: #ff6b35 !important;
+}
+
+.btn-orange {
+    background-color: #ff6b35;
+    color: #fff;
+    border-color: #ff6b35;
+}
+
+.btn-orange:hover {
+    background-color: #ff8659;
+    border-color: #ff8659;
+    color: #fff;
+}
+
+/* Topbar */
+.top-bar {
+    padding: 15px 0;
+}
+
+.top-bar p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.btn-sm-square:hover {
+    background: #ff6b35 !important;
+    color: #fff !important;
+}
+
+/* Navbar */
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    position: relative;
+    margin-left: 25px;
+    padding: 35px 0;
+    font-weight: 800;
+    color: #1a1a1a;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #ff6b35;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+.navbar .dropdown-menu {
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.navbar .dropdown-item {
+    padding: 12px 20px;
+    transition: .3s;
+}
+
+.navbar .dropdown-item:hover {
+    background: #ff6b35;
+    color: white;
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50%;
+}
+
+/* Footer */
+.footer {
+    margin-top: 0;
+    border-top: 3px solid #ff6b35;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 35px;
+    transition: 0.3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: #ff6b35;
+    border-color: #fff;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 6px;
+    padding: 0;
+    text-align: left;
+    color: #ffffff !important;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: #ff6b35;
+}
+
+.footer .btn.btn-link:hover {
+    color: #ff6b35 !important;
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer .copyright a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.footer .copyright a:hover {
+    color: #ff6b35;
+}
+
+.footer .footer-designer {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.footer .footer-designer:hover {
+    color: #ff6b35;
+}
+
+.footer p {
+    font-weight: 600;
+    color: #ffffff !important;
+}
+
+.footer p i {
+    font-weight: 900;
+    color: #ff6b35;
+}
+</style>
+
+</body>
+</html>
