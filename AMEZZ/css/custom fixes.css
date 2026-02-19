@@ -1,0 +1,140 @@
+/* ========================================
+   AMEZZ WEBSITE - CUSTOM FIXES
+   ======================================== */
+
+/* ===== REMOVE HEADER WHITE SPACES ===== */
+.container-fluid.bg-light {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.top-bar {
+    margin: 0 !important;
+    padding: 10px 15px !important;
+}
+
+.container-fluid.nav-bar {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.navbar {
+    margin: 0 !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== MAKE CAROUSEL IMAGES SMALLER ===== */
+.header-carousel .owl-carousel-item img {
+    max-height: 400px !important;
+    object-fit: cover !important;
+}
+
+/* For tablet view */
+@media (max-width: 992px) {
+    .header-carousel .owl-carousel-item img {
+        max-height: 350px !important;
+    }
+}
+
+/* For mobile view */
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item img {
+        max-height: 300px !important;
+    }
+}
+
+/* ===== REDUCE EMERGENCY CALL BUTTON SIZE ===== */
+.navbar .bg-primary {
+    padding: 15px 20px !important;
+}
+
+.navbar .bg-primary .bg-white {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.navbar .bg-primary p {
+    font-size: 12px !important;
+    margin-bottom: 2px !important;
+}
+
+.navbar .bg-primary h5,
+.navbar .bg-primary h6 {
+    font-size: 14px !important;
+    margin: 0 !important;
+}
+
+/* ===== DECORATIVE LINE BEFORE FOOTER ===== */
+.footer-divider {
+    height: 4px;
+    background: linear-gradient(to right, 
+        #06A3DA 0%, 
+        #ffffff 50%, 
+        #06A3DA 100%);
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Alternative decorative line styles (uncomment to use) */
+/*
+.footer-divider {
+    height: 3px;
+    background: repeating-linear-gradient(
+        90deg,
+        #06A3DA,
+        #06A3DA 10px,
+        #ffffff 10px,
+        #ffffff 20px
+    );
+}
+*/
+
+/* ===== REMOVE GAP BEFORE CAROUSEL ===== */
+.container-fluid.p-0.mb-5 {
+    margin-top: 0 !important;
+    padding: 0 !important;
+}
+
+/* ===== ADJUST ABOUT SECTION CONTACT BUTTON ===== */
+.about .bg-primary {
+    max-width: 350px;
+}
+
+/* ===== FIX FOOTER MARGIN ===== */
+.footer.pt-5.mt-5 {
+    margin-top: 0 !important;
+}
+
+.footer.pt-5.mt-0 {
+    margin-top: 0 !important;
+}
+
+/* ===== ADDITIONAL RESPONSIVE FIXES ===== */
+@media (max-width: 991.98px) {
+    .navbar .bg-primary {
+        margin-top: 15px;
+        margin-right: 0 !important;
+    }
+}
+
+/* ===== SMOOTH TRANSITIONS ===== */
+.navbar,
+.top-bar,
+.header-carousel img {
+    transition: all 0.3s ease;
+}
+
+/* ===== FIX ANY OVERFLOW ISSUES ===== */
+.container-fluid {
+    overflow-x: hidden;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}

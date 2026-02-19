@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Electrical Work | AMEZZ Projects & Services</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet from index.html -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* Service Page Specific Styles with Mobile Responsive */
+    :root {
+      --primary: #1E60AA;
+      --secondary: #FF4917;
+      --light: #EDF1FC;
+      --dark: #17224D;
+      --primary-blue: #1a2b5c;
+      --nav-light: #f3f6fb;
+      --brand-blue: #1f5fa8;
+      --accent-green: #1c8c2a;
+      --accent: #f0b429;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Full-width header without spaces */
+    .full-width-topbar {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .full-width-topbar .row {
+      margin: 0;
+      width: 100%;
+    }
+
+    .full-width-topbar .top-bar {
+      padding: 15px 30px;
+    }
+
+    .full-width-navbar {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .full-width-navbar .navbar {
+      border-radius: 0;
+      padding: 15px 30px;
+    }
+
+    .navbar-logo-link {
+      display: none;
+      margin-right: 20px;
+      width: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: none;
+    }
+
+    .navbar-logo-link.show {
+      width: 65px;
+      opacity: 1;
+      transition: width 0.3s ease, opacity 0.3s ease;
+    }
+
+    .navbar-desktop-logo {
+      height: 45px;
+      width: auto;
+    }
+
+    @media (min-width: 992px) {
+      .navbar-logo-link {
+        display: block;
+      }
+    }
+
+    .emergency-box {
+      height: 100%;
+    }
+
+    .navbar {
+      min-height: auto !important;
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.75rem !important;
+    }
+
+    .navbar-nav .nav-link {
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+
+    /* Hero Section - REDUCED PADDING */
+    .hero {
+      background: linear-gradient(120deg, rgba(26, 43, 92, .95), rgba(26, 43, 92, .85));
+      color: #fff;
+      padding: 80px 0 60px;
+      position: relative;
+      margin-top: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: #fff;
+      border-radius: 100% 100% 0 0;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 520px;
+    }
+
+    /* Image Box */
+    .img-box {
+      height: 300px;
+      background: #dbe4f0;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+      transition: .5s ease;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .img-box:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+
+    .img-box img {
+      object-fit: cover;
+      transition: transform .5s ease;
+      width: 100%;
+      height: 100%;
+    }
+
+    .img-box:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Section - REDUCED PADDING */
+    .section {
+      padding: 50px 0;
+    }
+
+    .section-title {
+      font-weight: 800;
+      color: var(--primary-blue);
+      font-size: 2.5rem;
+    }
+
+    /* Glass Card */
+    .glass {
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+      transition: .5s;
+    }
+
+    .glass:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Service List */
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+
+    .service-list li {
+      padding: 10px 0;
+      padding-left: 28px;
+      position: relative;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .service-list li::before {
+      content: "➤";
+      position: absolute;
+      left: 0;
+      color: var(--brand-blue);
+      font-weight: 700;
+    }
+
+    /* Features */
+    .features {
+      background: var(--light);
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+      transition: .5s;
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card h5 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .feature-card p {
+      font-size: 15px;
+      color: #666;
+      margin: 0;
+    }
+
+    /* Booking - REDUCED PADDING */
+    .booking {
+      background: linear-gradient(135deg, var(--primary-blue), #0f1f44);
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .booking h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .booking p {
+      font-size: 1.1rem;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      display: none;
+      right: 30px;
+      bottom: 30px;
+      z-index: 99;
+      width: 48px;
+      height: 48px;
+      background: var(--primary-blue);
+      color: #fff;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .back-to-top:hover {
+      background: var(--brand-blue);
+    }
+
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+      animation: fadeUp 1.1s ease forwards
+    }
+
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      animation: fadeLeft 1.1s ease forwards
+    }
+
+    .fade-right {
+      opacity: 0;
+      transform: translateX(80px);
+      animation: fadeRight 1.1s ease forwards
+    }
+
+    .zoom {
+      opacity: 0;
+      transform: scale(.88);
+      animation: zoom 1.1s ease forwards
+    }
+
+    .delay-1 {
+      animation-delay: .2s
+    }
+
+    .delay-2 {
+      animation-delay: .4s
+    }
+
+    .delay-3 {
+      animation-delay: .6s
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes fadeLeft {
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes fadeRight {
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes zoom {
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    /* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+    /* Tablet and below (991px) */
+    @media (max-width: 991.98px) {
+      .hero {
+        padding: 60px 0 50px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero::after {
+        height: 40px;
+      }
+
+      .hero .row {
+        flex-direction: column-reverse;
+      }
+
+      .hero .col-md-6:first-child {
+        order: 2;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .hero .col-md-6:last-child {
+        order: 1;
+      }
+
+      .img-box {
+        height: 250px;
+        margin-top: 0;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .section .row {
+        flex-direction: column;
+      }
+
+      .section .col-md-6 {
+        margin-bottom: 30px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .glass {
+        padding: 25px;
+        border-radius: 14px;
+      }
+
+      .glass:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-card {
+        padding: 25px;
+        margin-bottom: 20px;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .booking {
+        padding: 40px 0;
+      }
+
+      .booking h3 {
+        font-size: 1.75rem;
+      }
+
+      .booking p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Mobile (575px and below) */
+    @media (max-width: 575.98px) {
+      .hero {
+        padding: 50px 0 40px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .hero::after {
+        height: 30px;
+      }
+
+      .img-box {
+        height: 200px;
+        border-radius: 12px;
+      }
+
+      .img-box:hover {
+        transform: translateY(-5px) scale(1.01);
+      }
+
+      .section {
+        padding: 30px 0;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .glass {
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .service-list li {
+        font-size: 14px;
+        padding: 8px 0;
+        padding-left: 24px;
+      }
+
+      .feature-card {
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .feature-card h5 {
+        font-size: 1.1rem;
+      }
+
+      .feature-card p {
+        font-size: 14px;
+      }
+
+      .booking {
+        padding: 30px 0;
+      }
+
+      .booking h3 {
+        font-size: 1.5rem;
+      }
+
+      .booking p {
+        font-size: 0.95rem;
+      }
+
+      .back-to-top {
+        right: 20px;
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      /* Reduce animations on mobile for better performance */
+      .fade-up,
+      .fade-left,
+      .fade-right,
+      .zoom {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+
+    /* Emergency Contact Box Mobile Fix */
+    @media (max-width: 991.98px) {
+      .mt-4.mt-lg-0.me-lg-n4 {
+        margin-right: 0 !important;
+        margin-top: 1rem !important;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .mt-4.mt-lg-0.me-lg-n4 {
+        padding: 12px 15px;
+      }
+
+      .mt-4.mt-lg-0.me-lg-n4 h5 {
+        font-size: 1rem;
+      }
+
+      .mt-4.mt-lg-0.me-lg-n4 p {
+        font-size: 12px;
+      }
+    }
+
+    /* Make navbar sticky */
+    .full-width-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .full-width-navbar .navbar {
+      border-radius: 0;
+      padding: 15px 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar Start -->
+  <div class="full-width-topbar d-none d-lg-block" style="background-color: #EDF1FC;">
+    <div class="row align-items-center top-bar">
+      <div class="col-lg-3 col-md-12 text-center text-lg-start">
+        <a href="index.html" class="navbar-brand m-0 p-0 d-flex align-items-center">
+          <img src="img/amezz_logo.jpg" alt="AMEZZ Logo" style="height:45px; margin-right:10px;">
+          <h1 class="m-0" style="color: #1E60AA">AMEZZ</h1>
+        </a>
+      </div>
+      <div class="col-lg-9 col-md-12 text-end">
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <i class="fa fa-map-marker-alt me-2" style="color: #1E60AA;"></i>
+          <p class="m-0" style="color: #393838e8;">PUNE | MUMBAI | DUBAI</p>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center me-4">
+          <i class="far fa-envelope-open me-2" style="color: #1E60AA;"></i>
+          <p class="m-0" style="color: #393838e8;">amezz.projects.services@gmail.com</p>
+        </div>
+        <div class="h-100 d-inline-flex align-items-center">
+          <a class="btn btn-sm-square bg-white me-1" style="color: #1E60AA;"
+            href="https://www.facebook.com/mepservices2014/"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-sm-square bg-white me-1" style="color: #1E60AA;"
+            href="https://in.linkedin.com/in/amezz-mep-973058180?original_referer=https%3A%2F%2Fwww.google.com%2F"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+
+  <!-- Navbar Start -->
+  <div class="full-width-navbar nav-bar bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <a href="index.html" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
+        <img src="img/amezz_logo.jpg" alt="AMEZZ Logo" style="height:45px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <a href="index.html" class="navbar-logo-link" id="scrollLogo">
+          <img src="img/amezz_logo.jpg" alt="AMEZZ Logo" class="navbar-desktop-logo">
+        </a>
+        <div class="navbar-nav me-auto">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link">About</a>
+
+          <div class="nav-item dropdown">
+            <a href="" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+            <div class="dropdown-menu fade-up m-0">
+              <a href="service.html" class="dropdown-item">All Services</a>
+              <a href="electrical_service.html" class="dropdown-item active">Electrical Work</a>
+              <a href="HVAC_service.html" class="dropdown-item">HVAC Work</a>
+              <a href="plumbing_service.html" class="dropdown-item">Plumbing Work</a>
+              <a href="firefighting_service.html" class="dropdown-item">Firefighting Work</a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="nav-item nav-link">Blog</a>
+          <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+        <div class="mt-0 me-lg-n4 py-2 px-3 d-flex align-items-center emergency-box" style="background-color: #1E60AA;">
+          <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
+            style="width: 42px; height: 42px;">
+            <i class="fa fa-phone-alt" style="font-size: 16px; color: #1E60AA;"></i>
+          </div>
+          <div class="ms-2">
+            <p class="mb-0 text-white" style="font-size: 12px; line-height: 1.3;">Emergency 24/7</p>
+            <h6 class="m-0" style="font-size: 15px; line-height: 1.3; color: #FF6B35;">+91 9422070717</h6>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- Navbar End -->
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 fade-left delay-1">
+          <h1>Electrical Work</h1>
+          <p>
+            Delivering safe, efficient and reliable electrical solutions
+            across residential, commercial, industrial and infrastructure projects.
+          </p>
+        </div>
+        <div class="col-md-6 zoom delay-2">
+          <div class="img-box"><img class="img-fluid w-100 h-100" src="img/electrical_img1.jpg" alt="Electrical Work">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE DETAILS -->
+  <section class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 fade-up delay-1">
+          <div class="glass">
+            <h3 class="section-title">Our Electrical Expertise</h3>
+            <p>
+              Amezz Projects and Services is a turnkey MEP contracting firm
+              specializing in installation, testing and commissioning of
+              electrical systems with strict adherence to quality and timelines.
+            </p>
+            <ul class="service-list">
+              <li>HT / LT Electrical Works</li>
+              <li>Electrical Panel Manufacturing</li>
+              <li>Diesel Generator & Solar Systems</li>
+              <li>MSEDCL Liaisoning</li>
+              <li>Testing & Commissioning</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 fade-right delay-2">
+          <div class="img-box"><img class="img-fluid w-100 h-100" src="img/electrical_worker.jpg"
+              alt="Electrical Worker"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="features section">
+    <div class="container">
+      <div class="row text-center mb-5 fade-up delay-1">
+        <h2 class="section-title">Why Choose AMEZZ</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 fade-up delay-1">
+          <div class="feature-card">
+            <h5>Experienced Team</h5>
+            <p>Highly skilled engineers and supervisors with strong field expertise.</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up delay-2">
+          <div class="feature-card">
+            <h5>Quality Assurance</h5>
+            <p>Strict compliance with specifications, standards and safety norms.</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up delay-3">
+          <div class="feature-card">
+            <h5>On-Time Delivery</h5>
+            <p>Efficient planning to deliver projects within committed timelines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking">
+    <div class="container fade-up delay-1">
+      <h3>Book Electrical Service</h3>
+      <p class="mb-4">Get in touch with our experts for reliable MEP solutions.</p>
+      <a href="contact.html" class="btn btn-light btn-lg px-5">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer Start -->
+  <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"
+    style="background-color: #17224D;">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-light mb-4">Address</h4>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>PUNE | MUMBAI | DUBAI</p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+919422070717" class="text-light"
+              style="text-decoration: none;">+91 9422070717</a></p>
+          <p class="mb-2" style="display: flex; align-items: flex-start;">
+            <i class="fa fa-envelope me-3" style="margin-top: 3px;"></i>
+            <span style="word-break: break-word; flex: 1;">amezz.projects.services@gmail.com</span>
+          </p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mepservices2014/"><i
+                class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-social"
+              href="https://in.linkedin.com/in/amezz-mep-973058180?original_referer=https%3A%2F%2Fwww.google.com%2F"><i
+                class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-light mb-4">Opening Hours</h4>
+          <h6 class="text-light">Monday - Friday:</h6>
+          <p class="mb-4">09.00 AM - 09.00 PM</p>
+          <h6 class="text-light">Saturday - Sunday:</h6>
+          <p class="mb-0">09.00 AM - 12.00 PM</p>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-light mb-4">Services</h4>
+          <a class="btn btn-link" href="electrical_service.html">ELECTRICAL WORK</a>
+          <a class="btn btn-link" href="HVAC_service.html">HVAC WORK</a>
+          <a class="btn btn-link" href="plumbing_service.html">PLUMBING WORK</a>
+          <a class="btn btn-link" href="firefighting_service.html">FIREFIGHTING WORK</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="#">AMEZZ PROJECTS AND SERVICES TURNKEY MEP SOLUTIONS</a>, All Right
+            Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed By <a class="border-bottom" href="https://www.crystalweb.in/">Crystal Web</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Back to Top Button -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Back to Top JS -->
+  <script>
+    window.addEventListener('scroll', function () {
+      // Back to top Logic
+      if (window.pageYOffset > 300) {
+        document.querySelector('.back-to-top').style.display = 'flex';
+        document.querySelector('.back-to-top').style.alignItems = 'center';
+        document.querySelector('.back-to-top').style.justifyContent = 'center';
+      } else {
+        document.querySelector('.back-to-top').style.display = 'none';
+      }
+
+      // Scroll Logo Logic
+      const scrollLogo = document.getElementById('scrollLogo');
+      const topbar = document.querySelector('.full-width-topbar');
+
+      if (topbar && scrollLogo) {
+        const topbarHeight = topbar.offsetHeight;
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > topbarHeight) {
+          scrollLogo.classList.add('show');
+        } else {
+          // Remove transition when scrolling back to top
+          scrollLogo.style.transition = 'none';
+          scrollLogo.classList.remove('show');
+
+          // Re-enable transition after a brief moment
+          setTimeout(() => {
+            scrollLogo.style.transition = '';
+          }, 50);
+        }
+      }
+    });
+
+    document.querySelector('.back-to-top').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+
+</html>
